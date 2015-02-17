@@ -1,3 +1,7 @@
+/*********************/
+/* Replace Word Form */
+/*********************/
+
 #include <include/ReplForm.hpp>
 
 extern void replace_all_cb (Fl_Widget *w, void *v) ;
@@ -17,6 +21,10 @@ ReplForm::ReplForm ()
 	this->_replForm->end () ;
 }
 
+/*******************************/
+/* Callback Function Setting   */
+/* Parameter 'v' is a MainForm */
+/*******************************/
 void ReplForm::callbackFunctionSetting (void *v)
 {
 	this->_replAllBtn->when (FL_WHEN_RELEASE) ;
@@ -27,6 +35,10 @@ void ReplForm::callbackFunctionSetting (void *v)
 	this->_cancelBtn->callback ((Fl_Callback *)repl_dialog_exit_cb, this) ;
 }
 
+/*********************************************/
+/* Parameter 'find' is the last finding word */
+/* Parameter 'repl' is the last replace word */
+/*********************************************/
 void ReplForm::showForm (char *find, char *repl)
 {
 	this->_findInp->value (find) ;

@@ -1,9 +1,17 @@
+/*************/
+/* Main Form */
+/*************/
+
 #include <include/MainForm.hpp>
 #include "callback.cpp"
 
 #include <iostream>
 #include <cstring>
 
+/*******************************/
+/* Parameter 'w' is the width  */
+/* Parameter 'h' is the height */
+/*******************************/
 MainForm::MainForm (int w, int h)
 {
 	this->_width = w ;
@@ -33,6 +41,9 @@ MainForm::MainForm (int w, int h)
 	this->_replDialog = new ReplForm () ;
 }
 
+/**********************************/
+/* Form Callback Function Setting */
+/**********************************/
 void MainForm::formCallbackSetting ()
 {
 	this->_mainWindow->callback ((Fl_Callback *)exit_cb, this) ;
@@ -66,6 +77,13 @@ void MainForm::changeTitle ()
 	this->_mainWindow->label (title) ;
 }
 
+/*********************************/
+/* Parameter 'id'                */
+/* --SELECTALL : Select All      */
+/* --COPY : Copy Selected Word   */
+/* --CUT : Cut Selected Word     */
+/* --PASTE : Paste Selected Word */
+/*********************************/
 void MainForm::doEdit (int id)
 {
 	switch (id)
@@ -85,6 +103,9 @@ void MainForm::doEdit (int id)
 	}
 }
 
+/************************************/
+/* Editor Callback Function Setting */
+/************************************/
 void MainForm::editorCallbackSetting ()
 {
 	this->_textBuffer->add_modify_callback (text_modify_cb, this) ;
@@ -96,11 +117,17 @@ void MainForm::showInsertPosition ()
 	this->_textEditor->show_insert_position () ;
 }
 
+/********************/
+/* Show Find Dialog */
+/********************/
 void MainForm::showFind ()
 {
 	this->_findDialog->showForm (this->_findString) ;
 }
 
+/*************/
+/* Find Word */
+/*************/
 void MainForm::findNext ()
 {
 	if(this->_findDialog->getFind ()[0] == '\0')
@@ -123,11 +150,17 @@ void MainForm::findNext ()
 	}
 }
 
+/***********************/
+/* Show Replace Dialog */
+/***********************/
 void MainForm::showRepl ()
 {
 	this->_replDialog->showForm (this->_findString, this->_replString) ;
 }
 
+/****************/
+/* Replace Word */
+/****************/
 void MainForm::replNext ()
 {
 	if ((this->_replDialog->getFind ()[0] == '\0') || (this->_replDialog->getRepl ()[0] == '\0'))
@@ -154,6 +187,9 @@ void MainForm::replNext ()
 	}
 }
 
+/***************/
+/* Replace All */
+/***************/
 void MainForm::replAll ()
 {
 	int times = 0 ;
@@ -191,6 +227,9 @@ void MainForm::replAll ()
 	}
 }
 
+/**********************************************************************************/
+/* Check what user want to do, when he want to close a modified file without save */
+/**********************************************************************************/
 bool MainForm::checkSave ()
 {
 	int ans = fl_choice ("This file hasn't saved yet.\nWhat do you want do?", "Cancel", "Save", "Discard") ;
@@ -253,6 +292,9 @@ void MainForm::openFile ()
 	this->_textBuffer->call_modify_callbacks () ;
 }
 
+/*************************************************/
+/* Parameter 'asNew' : Force to save as new file */
+/*************************************************/
 void MainForm::saveFile (bool asNew)
 {
 	if (asNew || (this->_fileName == NULL))

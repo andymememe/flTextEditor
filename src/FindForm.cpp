@@ -1,3 +1,7 @@
+/******************/
+/* Find Word Form */
+/******************/
+
 #include <include/FindForm.hpp>
 
 extern void find_next_cb (Fl_Widget *w, void *v) ;
@@ -14,6 +18,10 @@ FindForm::FindForm ()
 	this->_findForm->end () ;
 }
 
+/**********************************/
+/* Form Callback Function Setting */
+/* Parameter 'v' is a MainForm    */
+/**********************************/
 void FindForm::callbackFunctionSetting (void *v)
 {
 	this->_findNextBtn->when (FL_WHEN_RELEASE) ;
@@ -22,6 +30,9 @@ void FindForm::callbackFunctionSetting (void *v)
 	this->_cancelBtn->callback ((Fl_Callback *)find_dialog_exit_cb, this) ;
 }
 
+/*********************************************/
+/* Parameter 'find' is the last finding word */
+/*********************************************/
 void FindForm::showForm (char *find)
 {
 	this->_findInp->value (find) ;

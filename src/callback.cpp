@@ -1,3 +1,7 @@
+/*********************/
+/* Callback Function */
+/*********************/
+
 #ifndef CALLBACK
 #define CALLBACK
 
@@ -7,6 +11,9 @@
 #include <FL/Fl_Widget.H>
 #include <FL/Fl_Text_Editor.H>
 
+/*************************************************/
+/* Callback Function When TextEditor Is Modified */
+/*************************************************/
 void text_modify_cb (int pos, int nInserted, int nDeleted, int nRestyled, const char* deletedText, void* cbArg)
 {
 	MainForm *w = (MainForm *)cbArg ;
