@@ -1,6 +1,6 @@
 # flTextEditor
 **flTextEditor** is a text editor using **FLTK** as widget toolkit.
-## Installation
+## Installation & Execution
 ### From Source
 ```shell
 make
