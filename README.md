@@ -5,7 +5,7 @@
 2. **GCC** compiler support **C++14** (Only for install from source)
 
 ## Installation & Execution
-### From Source
+### From Source (Linux Only)
 ```shell
 make
 ```
@@ -14,8 +14,13 @@ make
 ```
 
 ### From Binary
+#### Linux
 ```shell
 ./flTextEditor
+```
+#### Windows
+```shell
+flTextEditor.exe
 ```
 
 ## Usage
