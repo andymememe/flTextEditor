@@ -2,8 +2,7 @@
 /* Callback Function */
 /*********************/
 
-#ifndef CALLBACK
-#define CALLBACK
+#include "callback.hpp"
 
 #include <include/MainForm.hpp>
 #include <include/FindForm.hpp>
@@ -141,5 +140,3 @@ void repl_dialog_exit_cb (Fl_Widget *w, void *v)
 	ReplForm *r = (ReplForm *)v ;
 	r->hideForm () ;
 }
-
-#endif

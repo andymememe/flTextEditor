@@ -3,10 +3,7 @@
 /*********************/
 
 #include <include/ReplForm.hpp>
-
-extern void replace_all_cb (Fl_Widget *w, void *v) ;
-extern void replace_next_cb (Fl_Widget *w, void *v) ;
-extern void repl_dialog_exit_cb (Fl_Widget *w, void *v) ;
+#include "callback.hpp"
 
 ReplForm::ReplForm ()
 {

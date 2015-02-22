@@ -3,7 +3,7 @@
 /*************/
 
 #include <include/MainForm.hpp>
-#include "callback.cpp"
+#include "callback.hpp"
 
 #include <iostream>
 #include <cstring>

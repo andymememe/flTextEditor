@@ -3,9 +3,7 @@
 /******************/
 
 #include <include/FindForm.hpp>
-
-extern void find_next_cb (Fl_Widget *w, void *v) ;
-extern void find_dialog_exit_cb (Fl_Widget *w, void *v) ;
+#include "callback.hpp"
 
 FindForm::FindForm ()
 {
