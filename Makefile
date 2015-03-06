@@ -8,7 +8,7 @@ CXXFLAGS = $(shell fltk-config --cxxflags) -Wall -O3 -I.
 
 LINKFLTK = $(shell fltk-config --ldflags) --std=c++14
 
-flTextEditor : main.o FindForm.o ReplForm.o MainForm.o callback.o
+flTextEditor : main.o FindForm.o ReplForm.o MainForm.o
 	$(CXX) -o $@ $^ $(LINKFLTK) 
 
 main.o : main.cpp
@@ -21,9 +21,6 @@ ReplForm.o : ./src/ReplForm.cpp
 	$(CXX) -c $(CXXFLAGS) -o $@ $^
 
 MainForm.o : ./src/MainForm.cpp
-	$(CXX) -c $(CXXFLAGS) -o $@ $^
-
-callback.o : ./src/callback.cpp
 	$(CXX) -c $(CXXFLAGS) -o $@ $^
 
 clean :
