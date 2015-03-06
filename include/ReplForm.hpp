@@ -7,6 +7,13 @@
 #include <FL/Fl_Return_Button.H>
 #include <FL/Fl_Input.H>
 
+/*******************/
+/* Extern Function */
+/*******************/
+extern void replace_next_cb (Fl_Widget *w, void *v) ;
+extern void replace_all_cb (Fl_Widget *w, void *v) ;
+extern void repl_dialog_exit_cb (Fl_Widget *w, void *v) ;
+
 class ReplForm
 {
 	public :

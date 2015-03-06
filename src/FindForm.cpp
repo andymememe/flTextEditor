@@ -4,12 +4,6 @@
 
 #include <include/FindForm.hpp>
 
-/*******************/
-/* Extern Function */
-/*******************/
-extern void find_next_cb (Fl_Widget *w, void *v) ;
-extern void find_dialog_exit_cb (Fl_Widget *w, void *v) ;
-
 FindForm::FindForm ()
 {
 	this->_findForm = new Fl_Window (500, 120, "Find...") ;

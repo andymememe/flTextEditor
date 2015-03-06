@@ -7,6 +7,12 @@
 #include <FL/Fl_Return_Button.H>
 #include <FL/Fl_Input.H>
 
+/*******************/
+/* Extern Function */
+/*******************/
+extern void find_next_cb (Fl_Widget *w, void *v) ;
+extern void find_dialog_exit_cb (Fl_Widget *w, void *v) ;
+
 class FindForm
 {
 	public :
