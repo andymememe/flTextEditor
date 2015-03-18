@@ -3,7 +3,7 @@
 
 ## Requirement
 ### Linux
-1. **FLTK 1.3.x**, include **FLTK 1.3.x Library** & **FLTK Config Tool** (FLTK Config Tool only for install from source)
+1. **FLTK 1.3.x** with **--enable-shared=on**, include **FLTK 1.3.x Library** (**Shared** library) & **FLTK Config Tool** (FLTK Config Tool only for install from source)
 2. **GCC** compiler support **C++14** (Only for install from source)
 
 ### Windows
