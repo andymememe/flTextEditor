@@ -3,9 +3,8 @@
 
 ## Requirement
 ### Windows
-1. **Linux**
-2. **FLTK 1.3.x** library compiled by **MinGW**
-3. **MinGW 4.9.x**
+1. **FLTK 1.3.x** library compiled by **MinGW**
+2. **MinGW**
 
 ## Binary Release
 [Windows](https://github.com/andymememe/flTextEditor/releases)
