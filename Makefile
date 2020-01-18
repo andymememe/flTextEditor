@@ -1,4 +1,4 @@
-all : flTextEditor
+all : flTextEditor.exe
 
 CC = $(shell fltk-config --cc)
 CXX = $(shell fltk-config --cxx)
@@ -8,7 +8,7 @@ CXXFLAGS = $(shell fltk-config --cxxflags) -Wall -O3 -I.
 
 LINKFLTK = $(shell fltk-config --ldflags) --std=c++14
 
-flTextEditor : main.o FindForm.o ReplForm.o MainForm.o
+flTextEditor.exe : main.o FindForm.o ReplForm.o MainForm.o
 	$(CXX) -o $@ $^ $(LINKFLTK) 
 
 main.o : main.cpp
@@ -28,7 +28,7 @@ clean :
 
 clean-all :
 	rm *.o
-	rm flTextEditor
+	rm flTextEditor.exe
 
 uninstall :
-	rm flTextEditor
+	rm flTextEditor.exe
