@@ -11,130 +11,130 @@
 /*************************************************/
 /* Callback Function When TextEditor Is Modified */
 /*************************************************/
-void text_modify_cb (int pos, int nInserted, int nDeleted, int nRestyled, const char* deletedText, void* cbArg)
+void text_modify_cb(int pos, int nInserted, int nDeleted, int nRestyled, const char *deletedText, void *cbArg)
 {
-	MainForm *w = (MainForm *)cbArg ;
+	MainForm *w = (MainForm *)cbArg;
 
-	if ((nInserted || nDeleted) && !(w->getLoading ()))
+	if ((nInserted || nDeleted) && !(w->getLoading()))
 	{
-		w->setChange (true) ;
-		w->changeTitle () ;
+		w->setChange(true);
+		w->changeTitle();
 	}
-	if (w->getLoading ())
+	if (w->getLoading())
 	{
-		w->showInsertPosition () ;
+		w->showInsertPosition();
 	}
 }
 
-void new_cb (Fl_Widget *w, void *v)
+void new_cb(Fl_Widget *w, void *v)
 {
-	MainForm *m = (MainForm*)v ;
-	m->newFile () ;
-	m->changeTitle () ;
+	MainForm *m = (MainForm *)v;
+	m->newFile();
+	m->changeTitle();
 }
 
-void open_cb (Fl_Widget *w, void *v)
+void open_cb(Fl_Widget *w, void *v)
 {
-	MainForm *m = (MainForm *)v ;
-	m->openFile () ;
-	m->changeTitle () ;
+	MainForm *m = (MainForm *)v;
+	m->openFile();
+	m->changeTitle();
 }
 
-void save_cb (Fl_Widget *w, void *v)
+void save_cb(Fl_Widget *w, void *v)
 {
-	MainForm *m = (MainForm *)v ;
-	m->saveFile (false) ;
-	m->changeTitle () ;
+	MainForm *m = (MainForm *)v;
+	m->saveFile(false);
+	m->changeTitle();
 }
 
-void save_as_cb (Fl_Widget *w, void *v)
+void save_as_cb(Fl_Widget *w, void *v)
 {
-	MainForm *m = (MainForm *)v ;
-	m->saveFile () ;
-	m->changeTitle () ;
+	MainForm *m = (MainForm *)v;
+	m->saveFile();
+	m->changeTitle();
 }
 
-void exit_cb (Fl_Widget *w, void *v)
+void exit_cb(Fl_Widget *w, void *v)
 {
-	MainForm *m = (MainForm *)v ;
+	MainForm *m = (MainForm *)v;
 
 	if (m->getChange())
 	{
-		if (!(m->checkSave ()))
+		if (!(m->checkSave()))
 		{
-			return ;
+			return;
 		}
 	}
 
-	exit (0) ;
+	exit(0);
 }
 
-void select_all_cb (Fl_Widget *w, void *v)
+void select_all_cb(Fl_Widget *w, void *v)
 {
-	MainForm *m = (MainForm *)v ;
-	m->doEdit (MainForm::SELECTALL) ;
+	MainForm *m = (MainForm *)v;
+	m->doEdit(MainForm::SELECTALL);
 }
 
-void copy_cb (Fl_Widget *w, void *v)
+void copy_cb(Fl_Widget *w, void *v)
 {
-	MainForm *m = (MainForm *)v ;
-	m->doEdit (MainForm::COPY) ;
+	MainForm *m = (MainForm *)v;
+	m->doEdit(MainForm::COPY);
 }
 
-void cut_cb (Fl_Widget *w, void *v)
+void cut_cb(Fl_Widget *w, void *v)
 {
-	MainForm *m = (MainForm *)v ;
-	m->doEdit (MainForm::CUT) ;
-	m->setChange (true) ;
-	m->changeTitle () ;
+	MainForm *m = (MainForm *)v;
+	m->doEdit(MainForm::CUT);
+	m->setChange(true);
+	m->changeTitle();
 }
 
-void paste_cb (Fl_Widget *w, void *v)
+void paste_cb(Fl_Widget *w, void *v)
 {
-	MainForm *m = (MainForm *)v ;
-	m->doEdit (MainForm::PASTE) ;
-	m->setChange (true) ;
-	m->changeTitle () ;
+	MainForm *m = (MainForm *)v;
+	m->doEdit(MainForm::PASTE);
+	m->setChange(true);
+	m->changeTitle();
 }
 
-void find_cb (Fl_Widget *w, void *v)
+void find_cb(Fl_Widget *w, void *v)
 {
-	MainForm *m = (MainForm *)v ;
-	m->showFind () ;
+	MainForm *m = (MainForm *)v;
+	m->showFind();
 }
 
-void find_next_cb (Fl_Widget *w, void *v)
+void find_next_cb(Fl_Widget *w, void *v)
 {
-	MainForm *m = (MainForm *)v ;
-	m->findNext () ;
+	MainForm *m = (MainForm *)v;
+	m->findNext();
 }
 
-void replace_cb (Fl_Widget *w, void *v)
+void replace_cb(Fl_Widget *w, void *v)
 {
-	MainForm *m = (MainForm *)v ;
-	m->showRepl () ;
+	MainForm *m = (MainForm *)v;
+	m->showRepl();
 }
 
-void replace_next_cb (Fl_Widget *w, void *v)
+void replace_next_cb(Fl_Widget *w, void *v)
 {
-	MainForm *m = (MainForm *)v ;
-	m->replNext () ;
+	MainForm *m = (MainForm *)v;
+	m->replNext();
 }
 
-void replace_all_cb (Fl_Widget *w, void *v)
+void replace_all_cb(Fl_Widget *w, void *v)
 {
-	MainForm *m = (MainForm *)v ;
-	m->replAll () ;
+	MainForm *m = (MainForm *)v;
+	m->replAll();
 }
 
-void find_dialog_exit_cb (Fl_Widget *w, void *v)
+void find_dialog_exit_cb(Fl_Widget *w, void *v)
 {
-	FindForm *f = (FindForm *)v ;
-	f->hideForm () ;
+	FindForm *f = (FindForm *)v;
+	f->hideForm();
 }
 
-void repl_dialog_exit_cb (Fl_Widget *w, void *v)
+void repl_dialog_exit_cb(Fl_Widget *w, void *v)
 {
-	ReplForm *r = (ReplForm *)v ;
-	r->hideForm () ;
+	ReplForm *r = (ReplForm *)v;
+	r->hideForm();
 }
